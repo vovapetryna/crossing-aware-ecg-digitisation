@@ -107,7 +107,7 @@ def fig_error_oracle():
         ax.annotate(f"±{int(w * 1000)} ms ({100 * d['share'][str(w)]:.0f}% of error)", (100, y[-1]),
                     xytext=(4, 0), textcoords="offset points", va="center", color=INK, fontsize=8)
     ax.set_xlabel("QRS-window error amplitude removed (%)")
-    ax.set_ylabel("Validation SNR (dB)")
+    ax.set_ylabel("Development-set SNR (dB)")
     ax.set_xlim(0, 100)
     save(fig, "fig_error_oracle")
 

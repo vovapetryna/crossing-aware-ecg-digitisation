@@ -57,7 +57,7 @@ python scripts/score_ablation.py --pairs \
 python scripts/paper_figures.py      # writes outputs/figures
 ```
 
-Training times are wall-clock budgets on one NVIDIA RTX PRO 6000, so the number of updates, and therefore the scores, depends on the hardware. Figure 5 uses the in-training validation history (`history.json`) of the seed-2 runs.
+Training times are wall-clock budgets on one NVIDIA RTX PRO 6000, so the number of updates, and therefore the scores, depends on the hardware. Figure 5 uses the in-training development-set history (`history.json`) of the seed-2 runs.
 
 ## Layout
 
