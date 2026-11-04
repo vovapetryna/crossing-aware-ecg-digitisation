@@ -13,7 +13,7 @@ Data, placed in `data/`:
 - `physionet-ecg-image-digitization.zip`: the training data of the Kaggle competition "PhysioNet – Digitization of ECG Images". Download it from Kaggle under the competition rules.
 - `ptb-xl-1.0.3.zip`: PTB-XL 1.0.3 from PhysioNet (https://doi.org/10.13026/kfzx-aw45, CC BY 4.0). Only the ablation cache and the PTB-XL checks need it.
 
-Third-party rectifier: the page rectifier is not part of this repository. Download the code and weights by Kaggle user hengck23 into `third_party/hengck23/`:
+Third-party rectifier: the page rectifier (Kaggle notebook https://www.kaggle.com/code/hengck23/demo-submission, version of 15 November 2025) is not part of this repository. Download the code and weights by Kaggle user hengck23 into `third_party/hengck23/`:
 
 - `stage0_common.py`, `stage0_model.py`, `stage1_common.py` and `stage1_model.py`, from the Kaggle dataset `hengck23/hengck23-demo-submit-physionet`
 - `weight/stage0-last.checkpoint.pth` and `weight/stage1-last.checkpoint.pth`, from the same dataset (version of 14 November 2025)
@@ -54,7 +54,7 @@ python scripts/ensemble.py outputs/predictions/base_seed2_val_pred.pkl outputs/p
 python scripts/score_ablation.py --pairs \
     outputs/predictions/ablA_seed1_val_pred.pkl:outputs/predictions/ablC_seed1_val_pred.pkl \
     outputs/predictions/ablA_seed2_val_pred.pkl:outputs/predictions/ablC_seed2_val_pred.pkl
-python scripts/paper_figures.py      # writes outputs/figures
+LIBERTINUS_DIR=/path/to/libertinus/otf python scripts/paper_figures.py      # writes outputs/figures
 ```
 
 Training times are wall-clock budgets on one NVIDIA RTX PRO 6000, so the number of updates, and therefore the scores, depends on the hardware. Figure 5 uses the in-training development-set history (`history.json`) of the seed-2 runs.

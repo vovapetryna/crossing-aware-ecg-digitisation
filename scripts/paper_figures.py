@@ -4,10 +4,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import pickle
 from pathlib import Path
 
 import matplotlib
+import matplotlib.font_manager
 import matplotlib.patches
 
 matplotlib.use("Agg")
@@ -25,6 +27,11 @@ KIND_NAMES = {"0001": "clean", "0003": "scan", "0004": "scan bw", "0005": "photo
               "0009": "photo", "0010": "photo", "0011": "scan", "0012": "scan bw"}
 BLUE, ORANGE, AQUA, GRAY = "#2a78d6", "#eb6834", "#1baf7a", "#9a9893"
 INK, INK2 = "#0b0b0b", "#52514e"
+
+# Libertinus Sans matches the CEURART template; set LIBERTINUS_DIR to its .otf folder, else matplotlib's default font is used.
+for _font in Path(os.environ.get("LIBERTINUS_DIR", ".")).expanduser().glob("LibertinusSans-*.otf"):
+    matplotlib.font_manager.fontManager.addfont(str(_font))
+plt.rcParams["font.family"] = ["Libertinus Sans", "DejaVu Sans"]
 
 plt.rcParams.update({
     "font.size": 9, "axes.edgecolor": INK2, "axes.labelcolor": INK, "xtick.color": INK2, "ytick.color": INK2,
