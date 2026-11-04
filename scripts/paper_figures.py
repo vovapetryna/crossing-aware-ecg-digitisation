@@ -283,7 +283,7 @@ def fig_examples():
 
 
 def fig_pipeline():
-    steps = ["Page image:\nscan, photo\nor render", "Rectification\n(keypoints,\ngrid map)", "4 row\nstrips\n(±3 mV)",
+    steps = ["Page image:\nscan, photo\nor render", "Rectification\n(third-party:\nkeypoints,\ngrid map)", "4 row\nstrips\n(±3 mV)",
              "U-Net reader:\nheight per\ncolumn;\ncrossing head\nin training", "Least-squares\ncolumns to\nsamples",
              "Lead fusion,\nEinthoven\nprojection", "12 lead\nsignals"]
     fig, ax = plt.subplots(figsize=(7.2, 1.7))
