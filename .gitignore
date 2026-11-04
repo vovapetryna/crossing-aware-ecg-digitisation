@@ -1,0 +1,5 @@
+outputs/
+data/*.zip
+third_party/
+__pycache__/
+.venv/

@@ -1,0 +1,23 @@
+{
+  "seed": 4001,
+  "source": "data/physionet-ecg-image-digitization.zip",
+  "cache_dir": "outputs/cache_base",
+  "output_dir": "outputs/runs/base_long",
+  "model_type": "timm_unet",
+  "encoder": "convnext_tiny.fb_in22k",
+  "decoder_width": 64,
+  "mask_key": "exists",
+  "window": 2048,
+  "batch_size": 16,
+  "gradient_accumulation": 1,
+  "num_workers": 16,
+  "learning_rate": 0.0006,
+  "weight_decay": 0.01,
+  "warmup_steps": 300,
+  "gradient_clip": 1.0,
+  "time_budget_minutes": 150,
+  "validate_every_minutes": 25,
+  "validation_limit": 180,
+  "min_contrast": 1.1,
+  "ema_decay": 0.999
+}
